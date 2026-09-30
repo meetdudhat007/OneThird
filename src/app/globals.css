@@ -1,26 +1,25 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * Colour tokens. The final brand palette is still being decided, so the site
+ * currently runs on a temporary monochrome scheme. Components must use these
+ * semantic tokens (bg-canvas, text-ink, etc.) rather than raw colours, so the
+ * real palette can be swapped in here without touching components.
+ */
+@theme {
+  --color-canvas: #ffffff; /* page background */
+  --color-surface: #f7f7f7; /* subtle raised/alternate background */
+  --color-ink: #000000; /* primary text, primary buttons */
+  --color-ink-soft: #3f3f46; /* body copy */
+  --color-muted: #71717a; /* secondary text */
+  --color-line: #e4e4e7; /* borders, dividers */
+  --color-inverse: #080808; /* dark sections */
+  --color-on-inverse: #ffffff; /* text on dark sections */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-ink);
 }

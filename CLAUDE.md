@@ -29,7 +29,14 @@ section's real design, copy, and visual execution must be original and built aro
 ZapStack's own brand system below.
 
 ## BRAND SYSTEM
-Colors (use only these):
+CURRENT STATUS: the team is deciding a new palette. Until it's confirmed, the site uses
+a temporary monochrome scheme (black/white/greys, as on the reference site), defined as
+semantic tokens in src/app/globals.css (canvas, surface, ink, ink-soft, muted, line,
+inverse, on-inverse). Components must use those tokens, never raw hex values, so the
+final palette is a one-file swap. The logo is the "ZapSTACK" wordmark with a placeholder
+bolt mark (src/components/Logo.tsx) until a real logo exists.
+
+Previous palette (on hold, do not use until reconfirmed):
 - Deep Black #202020
 - Pure Black #000000
 - Gold #E0A030
@@ -55,6 +62,14 @@ Real case studies you may reference (nothing beyond what I confirm per project):
 - DeepShield (AI deepfake detection) — confirmed secondary/minor showcase item
 - Do NOT reference any ERP/CRM client engagement anywhere — publication permission has
   not been confirmed. Skip it entirely for now.
+
+## SITE STRUCTURE DECISIONS
+- Pages: Home, Work (list + case study detail), Services, About, Blog (list + post),
+  Contact.
+- Blog: keep the page and home-page section; posts are [NEEDS INPUT] placeholders until
+  the team writes real ones.
+- Contact form: front-end only, no backend yet. How submissions are delivered will be
+  decided later — don't wire it to any service without asking.
 
 ## PROCESS RULES
 - Build one section/component at a time. After each one works and I've reviewed it,
