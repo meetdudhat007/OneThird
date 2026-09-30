@@ -42,7 +42,7 @@ export default function CountUp({
         n: value,
         duration: 1.6,
         ease: "power2.out",
-        scrollTrigger: { trigger: el, start: "top 90%", once: true },
+        scrollTrigger: { trigger: el, start: "clamp(top 90%)", once: true },
         onUpdate: () => {
           text.nodeValue = formatCount(counter.n, prefix, suffix);
         },

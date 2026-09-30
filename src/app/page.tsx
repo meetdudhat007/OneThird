@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import IntroBand from "@/components/sections/IntroBand";
 import Principles from "@/components/sections/Principles";
 import ServicesList from "@/components/sections/ServicesList";
+import WorkShowcase from "@/components/sections/WorkShowcase";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <IntroBand />
       <Principles />
       <ServicesList />
+      <WorkShowcase />
     </main>
   );
 }

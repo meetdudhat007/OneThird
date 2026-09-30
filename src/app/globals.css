@@ -47,6 +47,18 @@
     }
   }
 
+  /* Sweeping scan line in the DeepShield illustration (SVG user units). */
+  --animate-scan: scan 3.2s ease-in-out infinite alternate;
+
+  @keyframes scan {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(212px);
+    }
+  }
+
   @keyframes fade-up {
     from {
       opacity: 0;

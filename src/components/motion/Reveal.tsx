@@ -38,7 +38,10 @@ export default function Reveal({
         duration: 1,
         delay,
         ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top 88%", once: true },
+        // The element is measured while already offset by `y`, so shift the
+        // trigger line by the same amount; clamp() keeps elements near the
+        // bottom of the page triggerable.
+        scrollTrigger: { trigger: el, start: `clamp(top 88%+=${y})`, once: true },
       });
     });
     return () => ctx.revert();
