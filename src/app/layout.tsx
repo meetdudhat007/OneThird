@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  // Load the true italic too; otherwise browsers fake it by slanting upright glyphs.
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -20,6 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col font-sans">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
