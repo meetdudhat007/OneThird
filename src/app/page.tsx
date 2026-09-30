@@ -1,5 +1,6 @@
 import BlogPreview from "@/components/sections/BlogPreview";
 import CapabilityBanner from "@/components/sections/CapabilityBanner";
+import CtaStrip from "@/components/sections/CtaStrip";
 import Faq from "@/components/sections/Faq";
 import Hero from "@/components/sections/Hero";
 import IntroBand from "@/components/sections/IntroBand";
@@ -18,6 +19,7 @@ export default function Home() {
       <WorkShowcase />
       <Faq />
       <BlogPreview />
+      <CtaStrip />
     </main>
   );
 }
