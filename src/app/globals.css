@@ -17,6 +17,34 @@
   --color-on-inverse: #ffffff; /* text on dark sections */
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /*
+   * Above-the-fold entrance animations. These are CSS (not GSAP) so they run
+   * from the very first paint: a JS-driven entrance would flash the content
+   * visible, hide it on hydration, then animate it back in.
+   */
+  --animate-line-up: line-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes line-up {
+    from {
+      transform: translateY(105%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 body {
