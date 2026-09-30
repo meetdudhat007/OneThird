@@ -1,4 +1,5 @@
 import CapabilityBanner from "@/components/sections/CapabilityBanner";
+import Faq from "@/components/sections/Faq";
 import Hero from "@/components/sections/Hero";
 import IntroBand from "@/components/sections/IntroBand";
 import Principles from "@/components/sections/Principles";
@@ -14,6 +15,7 @@ export default function Home() {
       <Principles />
       <ServicesList />
       <WorkShowcase />
+      <Faq />
     </main>
   );
 }
