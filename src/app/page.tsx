@@ -1,3 +1,4 @@
+import BlogPreview from "@/components/sections/BlogPreview";
 import CapabilityBanner from "@/components/sections/CapabilityBanner";
 import Faq from "@/components/sections/Faq";
 import Hero from "@/components/sections/Hero";
@@ -16,6 +17,7 @@ export default function Home() {
       <ServicesList />
       <WorkShowcase />
       <Faq />
+      <BlogPreview />
     </main>
   );
 }
