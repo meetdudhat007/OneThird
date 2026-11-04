@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Logo from "@/components/Logo";
 import Button from "@/components/ui/Button";
+import RollingText from "@/components/ui/RollingText";
 
 const navLinks = [
   { href: "/work", label: "Work" },
@@ -38,11 +39,11 @@ export default function Header() {
                 <Link
                   href={href}
                   aria-current={isActive(href) ? "page" : undefined}
-                  className={`text-sm transition-colors hover:text-ink ${
+                  className={`group inline-block text-sm transition-colors hover:text-ink ${
                     isActive(href) ? "text-ink" : "text-muted"
                   }`}
                 >
-                  {label}
+                  <RollingText>{label}</RollingText>
                 </Link>
               </li>
             ))}

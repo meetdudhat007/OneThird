@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import RollingText from "@/components/ui/RollingText";
 
 type Variant = "solid" | "outline" | "inverse";
 type Size = "md" | "lg";
@@ -16,8 +17,7 @@ const sizes: Record<Size, string> = {
 };
 
 /**
- * Pill link-button. On hover the label rolls up and an identical copy rolls in
- * from below (the copy is aria-hidden so screen readers hear the label once).
+ * Pill link-button with a rolling label on hover.
  */
 export default function Button({
   href,
@@ -37,17 +37,7 @@ export default function Button({
       href={href}
       className={`group inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors duration-300 ${sizes[size]} ${variants[variant]} ${className}`}
     >
-      <span className="relative block overflow-hidden">
-        <span className="flex items-center gap-2 transition-transform duration-300 ease-out group-hover:-translate-y-full motion-reduce:transition-none">
-          {children}
-        </span>
-        <span
-          aria-hidden="true"
-          className="absolute inset-0 flex items-center gap-2 translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0 motion-reduce:transition-none"
-        >
-          {children}
-        </span>
-      </span>
+      <RollingText>{children}</RollingText>
     </Link>
   );
 }
