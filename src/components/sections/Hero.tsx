@@ -32,7 +32,7 @@ export default function Hero() {
         <h1 className="text-balance text-5xl leading-[1.02] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
           <MaskedLine delay="0ms">Software built around</MaskedLine>
           <MaskedLine delay="110ms">
-            <em>how your business works.</em>
+            <em className="text-accent">how your business works.</em>
           </MaskedLine>
         </h1>
 
@@ -40,7 +40,7 @@ export default function Hero() {
           className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-ink-soft animate-fade-up motion-reduce:animate-none"
           style={{ animationDelay: "280ms" }}
         >
-          ZapStack is a custom software and digital solutions partner. We design and build
+          OneThird is a custom software and digital solutions partner. We design and build
           business software, web and SaaS products, AI/ML solutions, and automation, made
           for the way your team actually operates.
         </p>

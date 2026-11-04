@@ -1,15 +1,15 @@
 @AGENTS.md
 
 ## WHAT WE'RE BUILDING
-A marketing/portfolio website for ZapStack, a small custom software development team
+A marketing/portfolio website for OneThird, a small custom software development team
 based in India. This is a client-acquisition tool: its job is to convince overseas B2B
 businesses (primarily US, Australia, Canada first; UK/Europe/Middle East later) that
-ZapStack is a credible custom software partner — not a template SaaS product, not a
+OneThird is a credible custom software partner — not a template SaaS product, not a
 personal portfolio. Positioning: "Custom Software & Digital Solutions Partner." Service
 areas: Business Software (ERP/CRM/workflow/ops/procurement), Web & SaaS, AI/ML, and
 Automation.
 
-Honest context (don't let this leak into copy as false modesty or overclaiming): ZapStack
+Honest context (don't let this leak into copy as false modesty or overclaiming): OneThird
 is a student team of 4-5 people, working together about 6 months, going semi-professional.
 The site should read as credible and competent — not a 20-person agency, not a hobby
 project either.
@@ -26,23 +26,28 @@ nexstudio (a commercial template we don't own a license to and are not copying).
 that only as a reference for "what sections this kind of site usually has and in what
 order" — never its actual layout code, copy, images, or specific visual treatment. Every
 section's real design, copy, and visual execution must be original and built around
-ZapStack's own brand system below.
+OneThird's own brand system below.
 
 ## BRAND SYSTEM
-CURRENT STATUS: the team is deciding a new palette. Until it's confirmed, the site uses
-a temporary monochrome scheme (black/white/greys, as on the reference site), defined as
-semantic tokens in src/app/globals.css (canvas, surface, ink, ink-soft, muted, line,
-inverse, on-inverse). Components must use those tokens, never raw hex values, so the
-final palette is a one-file swap. The logo is the "ZapSTACK" wordmark with a placeholder
-bolt mark (src/components/Logo.tsx) until a real logo exists.
+Company name: OneThird (one word, capital T). Renamed from ZapStack in November 2026.
 
-Previous palette (on hold, do not use until reconfirmed):
-- Deep Black #202020
-- Pure Black #000000
-- Gold #E0A030
-- Bright Gold #E8A838
-- White #FFFFFF
-- Soft White #F5F5F5
+Logo: the Devanagari वन/थर्ड mark, a deliberate team decision that may move to an English
+version later. Files are in public/images/brand/ (blue and white versions, rendered by
+src/components/Logo.tsx). Always give the name in English in the surrounding text: alt
+text, page titles, footer.
+
+Palette, confirmed as exact matches to the logo:
+- Main: #1e3bff (primary buttons, blue sections)
+- Highlight: #ff3131 (accents only; large text and small marks on white)
+- Base: #ffffff (page background)
+- Supporting neutrals: near-black text, greys for secondary text, lines and soft backgrounds
+
+Contrast limits: red is 3.66:1 on white, so never use it for small text. Red is 1.84:1
+on blue, so never put red on blue outside the logo and the matching footer wordmark.
+
+All colours are semantic tokens in src/app/globals.css (brand, accent, canvas, surface,
+ink, ink-soft, muted, line, inverse, on-inverse, on-inverse-soft). Components must use
+those tokens, never raw hex values.
 
 ## RULES TO AVOID LOOKING "AI-GENERATED"
 - No bracket/terminal-style labels like "[ 01 // SECTION NAME ]"

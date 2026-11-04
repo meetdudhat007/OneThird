@@ -23,8 +23,9 @@ function CapabilityList({ hidden = false }: { hidden?: boolean }) {
           className="flex items-center whitespace-nowrap text-2xl tracking-tight text-muted sm:text-3xl"
         >
           <span className="px-6 sm:px-8">{item}</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true" className="size-4 text-line">
-            <path d="M13.5 2 4 13.5h6.5L9 22l11-12.5h-6.8L13.5 2Z" fill="currentColor" />
+          {/* The slash from the logo. */}
+          <svg viewBox="0 0 24 24" aria-hidden="true" className="size-5 text-accent">
+            <line x1="16" y1="3" x2="8" y2="21" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
           </svg>
         </li>
       ))}
@@ -50,7 +51,7 @@ export default function CapabilityBanner() {
               "radial-gradient(60% 80% at 20% 30%, color-mix(in oklab, var(--color-on-inverse) 14%, transparent), transparent), radial-gradient(50% 70% at 85% 80%, color-mix(in oklab, var(--color-on-inverse) 8%, transparent), transparent)",
           }}
         >
-          <p className="px-6 text-center text-sm text-on-inverse/70">
+          <p className="px-6 text-center text-sm text-on-inverse-soft">
             [NEEDS INPUT] Banner image: e.g. a team photo or product screenshots
           </p>
         </div>

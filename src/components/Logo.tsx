@@ -1,25 +1,30 @@
+import Image from "next/image";
 import Link from "next/link";
+import logoBlue from "../../public/images/brand/onethird-logo.png";
+import logoWhite from "../../public/images/brand/onethird-logo-white.png";
 
-// Placeholder mark until the team finalises a real logo.
-function BoltMark({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
-      <path d="M13.5 2 4 13.5h6.5L9 22l11-12.5h-6.8L13.5 2Z" fill="currentColor" />
-    </svg>
-  );
-}
+const logos = { blue: logoBlue, white: logoWhite };
 
-export default function Logo({ className = "" }: { className?: string }) {
+/**
+ * The logo is deliberately in Devanagari (वन/थर्ड). The alt text gives the
+ * name in English for screen readers and search engines.
+ */
+export default function Logo({
+  variant = "blue",
+  className = "",
+}: {
+  variant?: keyof typeof logos;
+  className?: string;
+}) {
   return (
-    <Link
-      href="/"
-      aria-label="ZapStack home"
-      className={`inline-flex items-center gap-2 text-xl tracking-tight ${className}`}
-    >
-      <BoltMark className="size-6" />
-      <span>
-        Zap<span className="italic">STACK</span>
-      </span>
+    <Link href="/" className={`inline-flex ${className}`}>
+      <Image
+        src={logos[variant]}
+        alt="OneThird home"
+        loading="eager"
+        sizes="180px"
+        className="h-12 w-auto lg:h-14"
+      />
     </Link>
   );
 }

@@ -12,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ZapStack — Custom Software & Digital Solutions Partner",
+  title: "OneThird — Custom Software & Digital Solutions Partner",
   description:
-    "ZapStack designs and builds custom business software, web and SaaS products, AI/ML solutions, and automation for growing businesses.",
+    "OneThird designs and builds custom business software, web and SaaS products, AI/ML solutions, and automation for growing businesses.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

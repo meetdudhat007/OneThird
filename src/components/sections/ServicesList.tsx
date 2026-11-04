@@ -59,11 +59,11 @@ export default function ServicesList() {
                   {/* Hover fill: rises from the bottom edge. */}
                   <span
                     aria-hidden="true"
-                    className="absolute inset-0 origin-bottom scale-y-0 bg-ink transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-y-100 motion-reduce:transition-none"
+                    className="absolute inset-0 origin-bottom scale-y-0 bg-brand transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-y-100 motion-reduce:transition-none"
                   />
-                  <span className="relative grid gap-3 px-2 py-8 transition-[color,padding] duration-500 group-hover:text-canvas sm:px-4 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)_auto] lg:items-center lg:gap-10 lg:py-10 lg:group-hover:px-8 motion-reduce:transition-none">
+                  <span className="relative grid gap-3 px-2 py-8 transition-[color,padding] duration-500 group-hover:text-on-inverse sm:px-4 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)_auto] lg:items-center lg:gap-10 lg:py-10 lg:group-hover:px-8 motion-reduce:transition-none">
                     <span className="text-2xl tracking-tight sm:text-3xl">{title}</span>
-                    <span className="max-w-xl text-pretty leading-relaxed text-ink-soft transition-colors duration-500 group-hover:text-canvas/75">
+                    <span className="max-w-xl text-pretty leading-relaxed text-ink-soft transition-colors duration-500 group-hover:text-on-inverse-soft">
                       {body}
                     </span>
                     <span className="hidden transition-transform duration-500 group-hover:rotate-45 lg:block">

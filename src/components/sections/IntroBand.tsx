@@ -19,13 +19,13 @@ function StatItem({ stat }: { stat: Stat }) {
   return (
     <div>
       {stat.value === null ? (
-        <p className="text-lg text-on-inverse/70">[NEEDS INPUT] number</p>
+        <p className="text-lg text-on-inverse-soft">[NEEDS INPUT] number</p>
       ) : (
         <p className="text-5xl tracking-tight">
           <CountUp value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
         </p>
       )}
-      <p className="mt-3 text-sm text-on-inverse/60">
+      <p className="mt-3 text-sm text-on-inverse-soft">
         {stat.label ?? "[NEEDS INPUT] what this number measures"}
       </p>
     </div>
@@ -42,10 +42,10 @@ export default function IntroBand() {
 
         <div>
           <p className="text-pretty text-xl leading-snug">
-            When you work with ZapStack, you talk directly to the people designing and writing
+            When you work with OneThird, you talk directly to the people designing and writing
             your software.
           </p>
-          <p className="mt-4 text-pretty leading-relaxed text-on-inverse/60">
+          <p className="mt-4 text-pretty leading-relaxed text-on-inverse-soft">
             We learn how your business runs day to day, then build the system around it, so
             the software fits your process instead of forcing a new one.
           </p>

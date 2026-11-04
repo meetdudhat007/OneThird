@@ -29,10 +29,10 @@ export default function WorkShowcase() {
                         <path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" fill="none" stroke="currentColor" strokeWidth="1.25" />
                       </svg>
                     </div>
-                    <p className="mt-3 max-w-lg flex-1 text-pretty leading-relaxed text-on-inverse/60">
+                    <p className="mt-3 max-w-lg flex-1 text-pretty leading-relaxed text-on-inverse-soft">
                       {project.summary}
                     </p>
-                    <p className="mt-5 flex justify-between text-sm text-on-inverse/60">
+                    <p className="mt-5 flex justify-between text-sm text-on-inverse-soft">
                       <span>{project.category}</span>
                       <span>{project.date}</span>
                     </p>

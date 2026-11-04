@@ -5,9 +5,9 @@ type Variant = "solid" | "outline" | "inverse";
 type Size = "md" | "lg";
 
 const variants: Record<Variant, string> = {
-  solid: "bg-ink text-canvas hover:bg-ink-soft",
-  outline: "border border-ink text-ink hover:bg-ink hover:text-canvas",
-  inverse: "bg-canvas text-ink hover:bg-surface",
+  solid: "bg-brand text-on-inverse hover:bg-ink",
+  outline: "border border-brand text-brand hover:bg-brand hover:text-on-inverse",
+  inverse: "bg-canvas text-brand hover:bg-surface",
 };
 
 const sizes: Record<Size, string> = {

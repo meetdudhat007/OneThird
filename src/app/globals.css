@@ -1,20 +1,25 @@
 @import "tailwindcss";
 
 /*
- * Colour tokens. The final brand palette is still being decided, so the site
- * currently runs on a temporary monochrome scheme. Components must use these
- * semantic tokens (bg-canvas, text-ink, etc.) rather than raw colours, so the
- * real palette can be swapped in here without touching components.
+ * Colour tokens. Components must use these semantic tokens (bg-canvas,
+ * text-ink, etc.) rather than raw colours.
+ *
+ * Brand colours match the logo exactly. Red is a highlight only: it is too low
+ * contrast for small text, and must never sit on blue outside the logo and footer wordmark.
  */
 @theme {
+  --color-brand: #1e3bff; /* main colour: primary buttons, blue sections */
+  --color-accent: #ff3131; /* highlight: large text and small marks on white */
+
   --color-canvas: #ffffff; /* page background */
   --color-surface: #f7f7f7; /* subtle raised/alternate background */
-  --color-ink: #000000; /* primary text, primary buttons */
+  --color-ink: #0a0a0a; /* primary text */
   --color-ink-soft: #3f3f46; /* body copy */
   --color-muted: #71717a; /* secondary text */
   --color-line: #e4e4e7; /* borders, dividers */
-  --color-inverse: #080808; /* dark sections */
-  --color-on-inverse: #ffffff; /* text on dark sections */
+  --color-inverse: var(--color-brand); /* blue sections */
+  --color-on-inverse: #ffffff; /* text on blue sections */
+  --color-on-inverse-soft: #dbe0ff; /* secondary text on blue sections (5.2:1) */
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
