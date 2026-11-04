@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import MaskedLine from "@/components/motion/MaskedLine";
 import Button from "@/components/ui/Button";
 
 function ArrowUpRight() {
@@ -6,22 +6,6 @@ function ArrowUpRight() {
     <svg viewBox="0 0 16 16" aria-hidden="true" className="size-4">
       <path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" fill="none" stroke="currentColor" strokeWidth="1.5" />
     </svg>
-  );
-}
-
-// Each headline line sits in a clipping mask and slides up into view.
-// overflow-y-clip (not overflow-hidden) keeps italic overhang visible sideways;
-// the bottom padding stops descenders from being clipped.
-function MaskedLine({ children, delay }: { children: ReactNode; delay: string }) {
-  return (
-    <span className="block overflow-x-visible overflow-y-clip pb-[0.08em]">
-      <span
-        className="block animate-line-up motion-reduce:animate-none"
-        style={{ animationDelay: delay }}
-      >
-        {children}
-      </span>
-    </span>
   );
 }
 

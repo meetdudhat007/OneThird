@@ -1,4 +1,5 @@
 import Reveal from "@/components/motion/Reveal";
+import Slash from "@/components/ui/Slash";
 
 // Service areas exactly as defined in CLAUDE.md. Swap for client logos only
 // once publication permission is confirmed for each one.
@@ -23,10 +24,7 @@ function CapabilityList({ hidden = false }: { hidden?: boolean }) {
           className="flex items-center whitespace-nowrap text-2xl tracking-tight text-muted sm:text-3xl"
         >
           <span className="px-6 sm:px-8">{item}</span>
-          {/* The slash from the logo. */}
-          <svg viewBox="0 0 24 24" aria-hidden="true" className="size-5 text-accent">
-            <line x1="16" y1="3" x2="8" y2="21" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
-          </svg>
+          <Slash className="size-5" />
         </li>
       ))}
     </ul>

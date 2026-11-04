@@ -39,7 +39,7 @@ export default function Header() {
                 <Link
                   href={href}
                   aria-current={isActive(href) ? "page" : undefined}
-                  className={`group inline-block text-sm transition-colors hover:text-ink ${
+                  className={`group block text-sm transition-colors hover:text-ink ${
                     isActive(href) ? "text-ink" : "text-muted"
                   }`}
                 >
