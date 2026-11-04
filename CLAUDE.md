@@ -75,6 +75,9 @@ Real case studies you may reference (nothing beyond what I confirm per project):
   the team writes real ones.
 - Contact form: front-end only, no backend yet. How submissions are delivered will be
   decided later — don't wire it to any service without asking.
+- Images: every image used on the site lives under public/images/, in a subfolder by
+  type (brand/ for logos, blog/, team/, and so on). Move any photo or logo the team
+  provides there, with a clear file name, and don't leave images in the project root.
 
 ## PROCESS RULES
 - Build one section/component at a time. After each one works and I've reviewed it,
