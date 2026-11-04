@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 /**
  * Fades its content up once, the first time it scrolls into view.
@@ -30,21 +29,22 @@ export default function Reveal({
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (el.getBoundingClientRect().top < window.innerHeight) return;
 
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      gsap.from(el, {
-        autoAlpha: 0,
-        y,
-        duration: 1,
-        delay,
-        ease: "power3.out",
-        // The element is measured while already offset by `y`, so shift the
-        // trigger line by the same amount; clamp() keeps elements near the
-        // bottom of the page triggerable.
-        scrollTrigger: { trigger: el, start: `clamp(top 88%+=${y})`, once: true },
-      });
+    const ctx = gsap.context(() => gsap.set(el, { autoAlpha: 0, y }));
+
+    // Watches the element itself rather than a pre-measured scroll position.
+    // The footer stays mounted between pages, so any measured position would
+    // go stale when the page length changes, leaving it hidden for good.
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      observer.disconnect();
+      ctx.add(() => gsap.to(el, { autoAlpha: 1, y: 0, duration: 1, delay, ease: "power3.out" }));
     });
-    return () => ctx.revert();
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+      ctx.revert();
+    };
   }, [y, delay]);
 
   return (

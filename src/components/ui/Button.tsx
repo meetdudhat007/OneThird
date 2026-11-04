@@ -17,7 +17,8 @@ const sizes: Record<Size, string> = {
 };
 
 /**
- * Pill link-button with a rolling label on hover.
+ * Pill button with a rolling label on hover. Renders a link when given an
+ * `href`, otherwise a form submit button.
  */
 export default function Button({
   href,
@@ -26,18 +27,25 @@ export default function Button({
   size = "md",
   className = "",
 }: {
-  href: string;
+  href?: string;
   children: ReactNode;
   variant?: Variant;
   size?: Size;
   className?: string;
 }) {
+  const classes = `group inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors duration-300 ${sizes[size]} ${variants[variant]} ${className}`;
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        <RollingText>{children}</RollingText>
+      </Link>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      className={`group inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors duration-300 ${sizes[size]} ${variants[variant]} ${className}`}
-    >
+    <button type="submit" className={`cursor-pointer ${classes}`}>
       <RollingText>{children}</RollingText>
-    </Link>
+    </button>
   );
 }
