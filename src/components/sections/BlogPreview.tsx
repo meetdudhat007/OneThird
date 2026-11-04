@@ -23,7 +23,7 @@ export default function BlogPreview() {
         </Reveal>
 
         <ul className="mt-14 grid gap-12 md:grid-cols-2 md:gap-8 lg:mt-16">
-          {posts.map((post, i) => (
+          {posts.slice(0, 2).map((post, i) => (
             <li key={post.slug}>
               <Reveal delay={i * 0.12}>
                 <Link
