@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import CtaStrip from "@/components/sections/CtaStrip";
+import ProcessSteps from "@/components/sections/ProcessSteps";
+import ServiceDetails from "@/components/sections/ServiceDetails";
 import ServicesIntro from "@/components/sections/ServicesIntro";
 
 export const metadata: Metadata = {
@@ -12,6 +14,8 @@ export default function ServicesPage() {
   return (
     <main className="flex-1">
       <ServicesIntro />
+      <ServiceDetails />
+      <ProcessSteps />
       <CtaStrip />
     </main>
   );
